@@ -11,7 +11,7 @@ import path from 'path'
 dotenv.config()
 
 
-const PORT=process.env.PORT
+const PORT=process.env.PORT || 5001;
 const __dirname = path.resolve()
 app.use(express.json())
 
@@ -25,10 +25,10 @@ app.use("/api/auth",authroutes)
 app.use('/api/messages',messageRoutes)
 
 if(process.env.NODE_ENV==="production"){
-    app.use(express.static(path.join(__dirname, "../frontend/dist")))
+    app.use(express.static(path.join(__dirname, "../..//dist")))
 
     app.get("*", (req,res)=>{
-        res.sendFile(path.join(__dirname, "../frontend" , "dist" , "index.html"))
+        res.sendFile(path.join(__dirname, "../../frontend" , "dist" , "index.html"))
     })
 }
 
