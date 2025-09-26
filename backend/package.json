@@ -7,9 +7,8 @@
     "start": "node src/index.js"
   },
   "engines": {
-  "node": "20.x"
-},
-
+    "node": "20.x"
+  },
   "keywords": [],
   "author": "",
   "type": "module",
