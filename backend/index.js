@@ -24,12 +24,12 @@ app.use(cors({
 app.use("/api/auth",authroutes)
 app.use('/api/messages',messageRoutes)
 
-if(process.env.NODE_ENV==="production"){
-    app.use(express.static(path.join(__dirname, "../dist")))
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static(path.join(__dirname, "dist")));
 
-    app.get("*", (_,res)=>{
-        res.sendFile(path.join(__dirname, "../dist" , "index.html"))
-    })
+    app.get("*", (_, res) => {
+        res.sendFile(path.join(__dirname, "dist", "index.html"));
+    });
 }
 
 connectDB()
