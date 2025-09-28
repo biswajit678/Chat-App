@@ -17,7 +17,7 @@ app.use(express.json())
 
 app.use(cookieParser())
 app.use(cors({
-    origin: "http://localhost:5173",
+    origin: "http://localhost:5174",
     credentials:true
 }))
 
@@ -32,7 +32,7 @@ if(process.env.NODE_ENV==="production"){
     })
 }
 
+connectDB()
 server.listen(PORT,()=>{
     console.log(`Server is running on port: ${PORT}`);
-    connectDB()
 })
