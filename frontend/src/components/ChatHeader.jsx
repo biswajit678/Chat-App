@@ -1,13 +1,21 @@
 import { useChatStore } from '../store/useChatStore'
 import { useAuthStore } from '../store/useAuthStore'
+import { ArrowLeft } from 'lucide-react'
+
 
 const ChatHeader = () => {
-    const {selectedUser}=useChatStore()
+    const {selectedUser, setSelectedUser}=useChatStore()
     const {onlineUsers}=useAuthStore()
   return (
     <div className='p-2.5 border-b border-base-300'>
         <div className='flex items-center justify-between'>
             <div className='flex items-center gap-3'>
+            <button
+                onClick={() => setSelectedUser(null)}
+                className=" btn btn-ghost btn-sm"
+                >
+                <ArrowLeft size={20} />
+                </button>
                 {/*Avatar */}
                 <div className='avatar  '>
                     <div className='size-10 rounded-full relative'>

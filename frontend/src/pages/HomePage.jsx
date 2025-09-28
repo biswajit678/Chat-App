@@ -9,9 +9,17 @@ const HomePage = () => {
     <div className='h-screen bg-base-300'>
       <div className='flex justify-center items-center pt-20 px-4'>
         <div className='bg-base-100 rounded-lg shadow-cl w-full max-w-6xl h-[calc(100vh-8rem)]'>
-          <div className='flex h-full rounded-lg overflow-hidden'>
+          <div className='hidden md:flex h-full rounded-lg overflow-hidden'>
             <Sidebar/>
             {!selectedUser ? <NoChatSelected/> : <ChatContainer/>}
+          </div>
+          <div className='md:hidden h-full rounded-lg overflow-hidden'>
+            {!selectedUser ? (
+              <Sidebar/>
+            ):
+            (
+              <ChatContainer/>
+            )}
           </div>
         </div>
       </div>
